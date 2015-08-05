@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ViewModel="clr-namespace:WpfTreeViewer.ViewModel">
+    <Style TargetType="TreeViewItem">
+        <Setter Property="IsExpanded" Value="True"/>
+        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}"/>
+    </Style>
+
+    <HierarchicalDataTemplate DataType="{x:Type ViewModel:WpfTreeNodeViewModel}"
+                              ItemsSource="{Binding Path=Children}">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Foreground ="{Binding Path=RelationBrush}">
+                <TextBlock.Text>
+                    <Binding Path="DisplayName"/>
+                </TextBlock.Text>
+            </TextBlock>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+</ResourceDictionary>

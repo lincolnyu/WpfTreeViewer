@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfTreeViewerTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WpfTreeViewer="clr-namespace:WpfTreeViewer;assembly=WpfTreeViewer" Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <WpfTreeViewer:WpfTreeViewerControl Root="{Binding ElementName=DemoGrid}" Grid.Column="0"/>
+        <GridSplitter Grid.Column="0" Width="3"/>
+        <Grid x:Name="DemoGrid" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".5*"/>
+            </Grid.RowDefinitions>
+            <Button>It's a Button</Button>
+            <TextBlock Grid.Row="0" Grid.Column="1">It's a TextBlock</TextBlock>
+        </Grid>
+    </Grid>
+</Window>
